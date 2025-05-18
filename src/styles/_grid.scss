@@ -1,0 +1,76 @@
+  @import 'variables';
+  @import 'mixins';
+
+  .container,
+  .container-fluid {
+    width: 100%;
+    padding-right: $grid-gutter-width / 2;
+    padding-left: $grid-gutter-width / 2;
+    margin-right: auto;
+    margin-left: auto;
+    box-sizing: border-box;
+  }
+
+  .container {
+    @each $breakpoint, $container-max-width in $container-max-widths {
+      @include media-breakpoint-up($breakpoint) {
+        max-width: $container-max-width;
+      }
+    }
+  }
+
+  .container-fluid {
+    // No se aplica max-width, ocupa el 100% del ancho con padding incluido
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -$grid-gutter-width / 2; /* Restaurado para compensar el padding de las columnas */
+    margin-left: -$grid-gutter-width / 2;  /* Restaurado para compensar el padding de las columnas */
+    box-sizing: border-box;
+
+    &.gap-between-cols {
+      margin-right: -($grid-gutter-width / 4);
+      margin-left: -($grid-gutter-width / 4);
+
+      [class*="col-"] {
+        padding-right: $grid-gutter-width / 4;
+        padding-left: $grid-gutter-width / 4;
+        margin-right: $grid-gutter-width / 4;
+        margin-left: $grid-gutter-width / 4;
+      }
+    }
+  }
+
+  [class*="col-"] {
+    position: relative;
+    width: 100%;
+    padding-right: $grid-gutter-width / 2;
+    padding-left: $grid-gutter-width / 2;
+    box-sizing: border-box;
+  }
+
+  @for $i from 1 through $grid-columns {
+    .col-#{$i} {
+      flex: 0 0 percentage($i / $grid-columns);
+      max-width: percentage($i / $grid-columns);
+    }
+  }
+
+  @each $breakpoint in map-keys($breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+      @for $i from 1 through $grid-columns {
+        .col-#{$breakpoint}-#{$i} {
+          flex: 0 0 percentage($i / $grid-columns);
+          max-width: percentage($i / $grid-columns);
+        }
+      }
+    }
+  }
+
+  .max-w-content {
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+  }

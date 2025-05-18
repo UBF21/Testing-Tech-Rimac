@@ -1,0 +1,114 @@
+$grid-columns: 12;
+$grid-gutter-width: 20px;
+
+$font-family: "Roboto", sans-serif;
+$font-size-base: 16px;
+$font-size-xs: 14px;
+$font-size-sm: 16px;
+$font-size-md: 18px;
+$font-size-lg: 20px;
+$font-size-xl: 24px;
+$font-size-xxl: 32px;
+
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extrabold: 800;
+$font-weight-ultrabold: 900;
+
+
+$line-height-base: 1.5;
+$line-height-xs: 1.2;  // Coincide con _utilities.scss
+$line-height-sm: 1.3;  // Coincide con _utilities.scss
+$line-height-md: 1.5;  // Coincide con _utilities.scss
+$line-height-lg: 1.6;  // Coincide con _utilities.scss
+$line-height-xl: 1.7;  // Coincide con _utilities.scss
+$line-height-xxl: 1.8; // Coincide con _utilities.scss
+
+$border-radius-base: 4px;
+$border-radius-xs: 2px;   // Casi cuadrado (coincide con _utilities.scss)
+$border-radius-sm: 4px;   // Poco redondeado (ajustado para progresión)
+$border-radius-md: 8px;   // Redondeo moderado (coincide con _utilities.scss)
+$border-radius-lg: 12px;  // Redondeado (coincide con _utilities.scss)
+$border-radius-xl: 16px;  // Muy redondeado (coincide con _utilities.scss)
+$border-radius-xxl: 24px; // Extremadamente redondeado (coincide con _utilities.scss)
+$border-radius-xxxl: 32px; // Nivel más redondeado
+
+
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px
+);
+
+$spacers: (
+  0: 0,
+  1: 0.25rem,
+  2: 0.5rem,
+  3: 1rem,
+  4: 1.5rem,
+  5: 3rem
+);
+
+$percentage-sizes: (25, 50, 75, 100);
+$vh-sizes: (20, 50, 100);
+$order-values: (0, 1, 2, 3, 4, 5);
+
+$colors: (
+  // Colores base (sin cambios)
+  primary: #007bff,
+  secondary: #6c757d,
+  success: #28a745,
+  info: #17a2b8,
+  warning: #ffc107,
+  danger: #dc3545,
+  light: #f8f9fa,
+  dark: #03050F,
+
+  // Variaciones más claras y oscuras
+  primary-light: #66b0ff, // Azul más claro
+  primary-dark: #0056b3,  // Azul más oscuro
+  secondary-light: #a3acb2, // Gris medio claro
+  secondary-dark: #4b5459,  // Gris medio oscuro
+  success-light: #5cd47a,   // Verde más claro
+  success-dark: #1c7b31,    // Verde más oscuro
+  info-light: #5dc6d3,      // Cian más claro
+  info-dark: #107a8b,       // Cian más oscuro
+  warning-light: #ffd453,   // Amarillo más claro
+  warning-dark: #cc9a06,    // Amarillo más oscuro
+  danger-light: #f16b77,    // Rojo más claro
+  danger-dark: #a52834,     // Rojo más oscuro
+
+  // Gama de grises
+  gray-100: #f1f3f5,  // Muy claro (más claro que light)
+  gray-200: #e9ecef,  // Claro
+  gray-300: #dee2e6,  // Claro medio
+  gray-400: #ced4da,  // Medio
+  gray-500: #adb5bd,  // Medio grisáceo
+  gray-600: #868e96,  // Gris oscuro
+  gray-700: #495057,  // Más oscuro
+  gray-800: #343a40,  // Muy oscuro
+  gray-900: #212529,  // Casi negro
+
+  // Colores adicionales
+  pastel-blue: #a3d7ff,    // Azul pastel
+  pastel-green: #b3e6cc,   // Verde pastel
+  pastel-yellow: #fff3b3,  // Amarillo pastel
+  pastel-red: #ffcccb,     // Rojo pastel
+  beige: #f5f5dc,          // Beige
+  cream: #fff5e6,          // Crema
+  charcoal: #333333        // Gris carbón
+);

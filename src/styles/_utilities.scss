@@ -1,0 +1,819 @@
+@import 'variables';
+
+@each $spacer, $value in $spacers {
+  .p-#{$spacer} {
+    padding: $value !important;
+  }
+
+  .pt-#{$spacer} {
+    padding-top: $value !important;
+  }
+
+  .pr-#{$spacer} {
+    padding-right: $value !important;
+  }
+
+  .pb-#{$spacer} {
+    padding-bottom: $value !important;
+  }
+
+  .pl-#{$spacer} {
+    padding-left: $value !important;
+  }
+
+  .px-#{$spacer} {
+    padding-left: $value !important;
+    padding-right: $value !important;
+  }
+
+  .py-#{$spacer} {
+    padding-top: $value !important;
+    padding-bottom: $value !important;
+  }
+
+  .m-#{$spacer} {
+    margin: $value !important;
+  }
+
+  .mt-#{$spacer} {
+    margin-top: $value !important;
+  }
+
+  .mr-#{$spacer} {
+    margin-right: $value !important;
+  }
+
+  .mb-#{$spacer} {
+    margin-bottom: $value !important;
+  }
+
+  .ml-#{$spacer} {
+    margin-left: $value !important;
+  }
+
+  .mx-#{$spacer} {
+    margin-left: $value !important;
+    margin-right: $value !important;
+  }
+
+  .my-#{$spacer} {
+    margin-top: $value !important;
+    margin-bottom: $value !important;
+  }
+
+  
+  // Clases responsivas (con breakpoints)
+  @each $breakpoint in map-keys($breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+      .p-#{$breakpoint}-#{$spacer} {
+        padding: $value !important;
+      }
+
+      .pt-#{$breakpoint}-#{$spacer} {
+        padding-top: $value !important;
+      }
+
+      .pr-#{$breakpoint}-#{$spacer} {
+        padding-right: $value !important;
+      }
+
+      .pb-#{$breakpoint}-#{$spacer} {
+        padding-bottom: $value !important;
+      }
+
+      .pl-#{$breakpoint}-#{$spacer} {
+        padding-left: $value !important;
+      }
+
+      .px-#{$breakpoint}-#{$spacer} {
+        padding-left: $value !important;
+        padding-right: $value !important;
+      }
+
+      .py-#{$breakpoint}-#{$spacer} {
+        padding-top: $value !important;
+        padding-bottom: $value !important;
+      }
+
+      .m-#{$breakpoint}-#{$spacer} {
+        margin: $value !important;
+      }
+
+      .mt-#{$breakpoint}-#{$spacer} {
+        margin-top: $value !important;
+      }
+
+      .mr-#{$breakpoint}-#{$spacer} {
+        margin-right: $value !important;
+      }
+
+      .mb-#{$breakpoint}-#{$spacer} {
+        margin-bottom: $value !important;
+      }
+
+      .ml-#{$breakpoint}-#{$spacer} {
+        margin-left: $value !important;
+      }
+
+      .mx-#{$breakpoint}-#{$spacer} {
+        margin-left: $value !important;
+        margin-right: $value !important;
+      }
+
+      .my-#{$breakpoint}-#{$spacer} {
+        margin-top: $value !important;
+        margin-bottom: $value !important;
+      }
+    }
+  }
+}
+
+
+
+// Utilidades para min-width y max-width en porcentajes
+.min-w-100 {
+  min-width: 100% !important;
+}
+
+.max-w-100 {
+  max-width: 100% !important;
+}
+
+.w-100-vw {
+  width: 100vw !important;
+}
+
+.h-100-vh {
+  height: 100vh !important;
+}
+
+.h-90-vh {
+  height: 90vh !important;
+}
+
+.h-75-vh {
+  height: 75vh !important;
+}
+
+.h-50-vh {
+  height: 50vh !important;
+}
+
+.w-100 {
+  width: 100% !important;
+}
+
+.h-100 {
+  height: 100% !important;
+}
+
+// Utilidades para min-height y max-height en porcentajes
+.min-h-100 {
+  min-height: 100% !important;
+}
+
+.min-h-50 {
+  min-height: 50% !important;
+}
+
+.max-h-100 {
+  max-height: 100% !important;
+}
+
+// Utilidades para viewport height (vh)
+@each $size in $vh-sizes {
+  .h-vh-#{$size} {
+    height: #{$size}vh !important;
+  }
+
+  .min-h-vh-#{$size} {
+    min-height: #{$size}vh !important;
+  }
+
+  .max-h-vh-#{$size} {
+    max-height: #{$size}vh !important;
+  }
+}
+
+.min-w-100 {
+  min-width: 100% !important;
+}
+
+.max-w-100 {
+  max-width: 100% !important;
+}
+
+.min-w-25 {
+  min-width: 25% !important;
+}
+
+.max-w-25 {
+  max-width: 25% !important;
+}
+
+.min-w-50 {
+  min-width: 50% !important;
+}
+
+.max-w-50 {
+  max-width: 50% !important;
+}
+
+.min-w-75 {
+  min-width: 75% !important;
+}
+
+.max-w-75 {
+  max-width: 75% !important;
+}
+
+.min-w-100 {
+  min-width: 100% !important;
+}
+
+.max-w-100 {
+  max-width: 100% !important;
+}
+
+// Display utilities
+.d-none {
+  display: none !important;
+}
+
+.d-block {
+  display: block !important;
+}
+
+.d-inline {
+  display: inline !important;
+}
+
+.d-inline-block {
+  display: inline-block !important;
+}
+
+.d-flex {
+  display: flex !important;
+}
+
+.flex-row {
+  flex-direction: row !important;
+}
+
+.flex-column {
+  flex-direction: column !important;
+}
+
+.justify-content-start {
+  justify-content: flex-start !important;
+}
+
+.justify-content-end {
+  justify-content: flex-end !important;
+}
+
+.justify-content-center {
+  justify-content: center !important;
+}
+
+.justify-content-between {
+  justify-content: space-between !important
+}
+
+.justify-content-around {
+  justify-content: space-around !important
+}
+
+.align-items-start {
+  align-items: flex-start !important;
+}
+
+.align-items-end {
+  align-items: flex-end !important;
+}
+
+.align-items-center {
+  align-items: center !important;
+}
+
+.align-items-baseline {
+  align-items: baseline !important;
+}
+
+.align-items-stretch {
+  align-items: stretch !important;
+}
+
+// Flexbox utilities (responsive)
+@each $breakpoint in map-keys($breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    .d-#{$breakpoint}-flex {
+      display: flex !important;
+    }
+
+    .d-#{$breakpoint}-none {
+      display: none !important;
+    }
+
+    .d-#{$breakpoint}-block {
+      display: block !important;
+    }
+
+    .d-#{$breakpoint}-inline {
+      display: inline !important;
+    }
+
+    .d-#{$breakpoint}-inline-block {
+      display: inline-block !important;
+    }
+
+    .flex-#{$breakpoint}-row {
+      flex-direction: row !important;
+    }
+
+    .flex-#{$breakpoint}-column {
+      flex-direction: column !important;
+    }
+
+    .justify-content-#{$breakpoint}-start {
+      justify-content: flex-start !important;
+    }
+
+    .justify-content-#{$breakpoint}-end {
+      justify-content: flex-end !important;
+    }
+
+    .justify-content-#{$breakpoint}-center {
+      justify-content: center !important;
+    }
+
+    .justify-content-#{$breakpoint}-between {
+      justify-content: space-between !important
+    }
+
+    .align-items-#{$breakpoint}-start {
+      align-items: flex-start !important;
+    }
+
+    .align-items-#{$breakpoint}-end {
+      align-items: flex-end !important;
+    }
+
+    .align-items-#{$breakpoint}-center {
+      align-items: center !important;
+    }
+
+    .align-items-#{$breakpoint}-baseline {
+      align-items: baseline !important;
+    }
+
+    .align-items-#{$breakpoint}-stretch {
+      align-items: stretch !important;
+    }
+  }
+}
+
+
+// Order utilities
+@each $value in $order-values {
+  .order-#{$value} {
+    order: $value !important;
+  }
+}
+
+@each $breakpoint in map-keys($breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    @each $value in $order-values {
+      .order-#{$breakpoint}-#{$value} {
+        order: $value !important;
+      }
+    }
+  }
+}
+
+.img-fluid {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+.img-center {
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.img-left {
+  display: block !important;
+  margin-right: auto !important;
+}
+
+.img-right {
+  display: block !important;
+  margin-left: auto !important;
+}
+
+.img-rounded {
+  border-radius: 0.25rem !important;
+}
+
+.img-border {
+  border: 1px solid #dee2e6 !important;
+}
+
+//background utilities
+
+@each $color-name, $color-value in $colors {
+  .bg-#{$color-name} {
+    background-color: $color-value !important;
+  }
+}
+
+@each $color-name, $color-value in $colors {
+  .text-#{$color-name} {
+    color: $color-value !important;
+  }
+}
+
+.btn {
+  display: inline-block;
+  font-family: $font-family;
+  font-weight: $font-weight-medium;
+  text-align: center;
+  border: none;
+  border-radius: $border-radius-base;
+  padding: 0.5rem 1rem;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+@each $color-name, $color-value in $colors {
+  .btn-#{$color-name} {
+    background-color: $color-value;
+    color: if($color-value ==#f8f9fa or $color-value ==#ffc107, #03050F, #ffffff);
+
+    &:hover {
+      background-color: darken($color-value, 10%);
+    }
+  }
+}
+
+// Button size variants (fixed, independent of device)
+.btn-xs {
+  padding: 0.2rem 0.4rem;
+  font-size: $font-size-xs;
+  line-height: $line-height-xs;
+}
+
+.btn-sm {
+  padding: 0.3rem 0.6rem;
+  font-size: $font-size-sm;
+  line-height: $line-height-sm;
+}
+
+.btn-md {
+  padding: 0.5rem 1rem;
+  font-size: $font-size-md;
+  line-height: $line-height-md;
+}
+
+.btn-lg {
+  padding: 0.75rem 1.5rem;
+  font-size: $font-size-lg;
+  line-height: $line-height-lg;
+}
+
+.btn-xl {
+  padding: 1rem 2rem;
+  font-size: $font-size-xl;
+  line-height: $line-height-xl;
+}
+
+.btn-xxl {
+  padding: 1.25rem 2.5rem;
+  font-size: $font-size-xxl;
+  line-height: $line-height-xxl;
+}
+
+// Button border-radius variants (fixed, independent of device)
+.btn-rounded-xs {
+  border-radius: $border-radius-xs !important; // Casi cuadrado
+}
+
+.btn-rounded-sm {
+  border-radius: $border-radius-sm !important; // Poco redondeado
+}
+
+.btn-rounded-md {
+  border-radius: $border-radius-md !important; // Redondeo moderado
+}
+
+.btn-rounded-lg {
+  border-radius: $border-radius-lg !important; // Redondeado
+}
+
+.btn-rounded-xl {
+  border-radius: $border-radius-xl !important; // Muy redondeado
+}
+
+.btn-rounded-xxl {
+  border-radius: $border-radius-xxl !important; // Extremadamente redondeado
+}
+
+.btn-rounded-xxxl {
+  border-radius: $border-radius-xxxl !important; // Nivel más redondeado
+}
+
+// Responsive button adjustments (apply only if no size variant is specified)
+@each $breakpoint in map-keys($breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    .btn:not(.btn-xs):not(.btn-sm):not(.btn-md):not(.btn-lg):not(.btn-xl):not(.btn-xxl) {
+      @if $breakpoint ==xs {
+        padding: 0.2rem 0.4rem;
+        font-size: $font-size-xs;
+        line-height: $line-height-xs;
+      }
+
+      @else if $breakpoint ==sm {
+        padding: 0.3rem 0.6rem;
+        font-size: $font-size-sm;
+        line-height: $line-height-sm;
+      }
+
+      @else if $breakpoint ==md {
+        padding: 0.5rem 1rem;
+        font-size: $font-size-md;
+        line-height: $line-height-md;
+      }
+
+      @else if $breakpoint ==lg {
+        padding: 0.75rem 1.5rem;
+        font-size: $font-size-lg;
+        line-height: $line-height-lg;
+      }
+
+      @else if $breakpoint ==xl {
+        padding: 1rem 2rem;
+        font-size: $font-size-xl;
+        line-height: $line-height-xl;
+      }
+
+      @else if $breakpoint ==xxl {
+        padding: 1.25rem 2.5rem;
+        font-size: $font-size-xxl;
+        line-height: $line-height-xxl;
+      }
+    }
+  }
+}
+
+.text-xs {
+  font-size: $font-size-xs;
+  line-height: $line-height-xs;
+}
+
+.text-sm {
+  font-size: $font-size-sm;
+  line-height: $line-height-sm;
+}
+
+.text-md {
+  font-size: $font-size-md;
+  line-height: $line-height-md;
+}
+
+.text-lg {
+  font-size: $font-size-lg;
+  line-height: $line-height-lg;
+}
+
+.text-xl {
+  font-size: $font-size-xl;
+  line-height: $line-height-xl;
+}
+
+.text-xxl {
+  font-size: $font-size-xxl;
+  line-height: $line-height-xxl;
+}
+
+// Clases para grosor de texto (énfasis/bold)
+.font-weight-light {
+  font-weight: $font-weight-light;
+}
+
+.font-weight-normal {
+  font-weight: $font-weight-normal;
+}
+
+.font-weight-medium {
+  font-weight: $font-weight-medium;
+}
+
+.font-weight-semibold {
+  font-weight: $font-weight-semibold;
+}
+
+.font-weight-bold {
+  font-weight: $font-weight-bold;
+}
+
+.font-weight-extrabold {
+  font-weight: $font-weight-extrabold;
+}
+
+.font-weight-ultrabold {
+  font-weight: $font-weight-ultrabold;
+}
+
+// Clases para altura de línea (opcional, pero útil para consistencia)
+.line-height-xs {
+  line-height: $line-height-xs;
+}
+
+.line-height-sm {
+  line-height: $line-height-sm;
+}
+
+.line-height-md {
+  line-height: $line-height-md;
+}
+
+.line-height-lg {
+  line-height: $line-height-lg;
+}
+
+.line-height-xl {
+  line-height: $line-height-xl;
+}
+
+.line-height-xxl {
+  line-height: $line-height-xxl;
+}
+
+// Clase base para la fuente por defecto
+.text-base {
+  font-family: $font-family;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  font-weight: $font-weight-normal;
+}
+
+// Clase para un chip personalizado con fondo gradiente
+.chip {
+  display: inline-block;
+  background: linear-gradient(90deg, map-get($colors, success) 0%, map-get($colors, primary) 100%);
+  color: #03050F;
+  font-weight: $font-weight-bold;
+  padding: 4px 12px;
+  border-radius: $border-radius-sm;
+
+  @each $breakpoint in map-keys($breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+      font-size: if($breakpoint == 'xs', $font-size-xs, if($breakpoint == 'sm', $font-size-sm, if($breakpoint == 'md', $font-size-sm, $font-size-sm))) !important;
+      line-height: if($breakpoint == 'xs', $line-height-xs, if($breakpoint == 'sm', $line-height-sm, if($breakpoint == 'md', $line-height-sm, $line-height-sm))) !important;
+    }
+  }
+}
+
+// Definición de tamaños base y responsivos para cada elemento de texto
+h1 {
+  font-size: 2.5rem; /* Tamaño base para pantallas grandes */
+  font-weight: 600;
+
+  @media (max-width: 576px) { /* Teléfonos */
+    font-size: 1.5rem; /* Tamaño más pequeño para teléfonos */
+  }
+  @media (min-width: 577px) and (max-width: 768px) { /* Tabletas */
+    font-size: 2rem; /* Tamaño intermedio para tabletas */
+  }
+  @media (min-width: 769px) { /* Escritorio */
+    font-size: 2.5rem; /* Tamaño base para escritorio */
+  }
+}
+
+h2 {
+  font-size: 2rem; /* Tamaño base para pantallas grandes */
+  font-weight: 600;
+
+  @media (max-width: 576px) { /* Teléfonos */
+    font-size: 1.25rem; /* Tamaño más pequeño para teléfonos */
+  }
+  @media (min-width: 577px) and (max-width: 768px) { /* Tabletas */
+    font-size: 1.75rem; /* Tamaño intermedio para tabletas */
+  }
+  @media (min-width: 769px) { /* Escritorio */
+    font-size: 2rem; /* Tamaño base para escritorio */
+  }
+}
+
+h3 {
+  font-size: 1.75rem; /* Tamaño base para pantallas grandes */
+  font-weight: 600;
+
+  @media (max-width: 576px) { /* Teléfonos */
+    font-size: 1.125rem; /* Tamaño más pequeño para teléfonos */
+  }
+  @media (min-width: 577px) and (max-width: 768px) { /* Tabletas */
+    font-size: 1.5rem; /* Tamaño intermedio para tabletas */
+  }
+  @media (min-width: 769px) { /* Escritorio */
+    font-size: 1.75rem; /* Tamaño base para escritorio */
+  }
+}
+
+h4 {
+  font-size: 1.5rem; /* Tamaño base para pantallas grandes */
+  font-weight: 600;
+
+  @media (max-width: 576px) { /* Teléfonos */
+    font-size: 1rem; /* Tamaño más pequeño para teléfonos */
+  }
+  @media (min-width: 577px) and (max-width: 768px) { /* Tabletas */
+    font-size: 1.25rem; /* Tamaño intermedio para tabletas */
+  }
+  @media (min-width: 769px) { /* Escritorio */
+    font-size: 1.5rem; /* Tamaño base para escritorio */
+  }
+}
+
+h5 {
+  font-size: 1.25rem; /* Tamaño base para pantallas grandes */
+  font-weight: 600;
+
+  @media (max-width: 576px) { /* Teléfonos */
+    font-size: 0.875rem; /* Tamaño más pequeño para teléfonos */
+  }
+  @media (min-width: 577px) and (max-width: 768px) { /* Tabletas */
+    font-size: 1rem; /* Tamaño intermedio para tabletas */
+  }
+  @media (min-width: 769px) { /* Escritorio */
+    font-size: 1.25rem; /* Tamaño base para escritorio */
+  }
+}
+
+h6 {
+  font-size: 1rem; /* Tamaño base para pantallas grandes */
+  font-weight: 600;
+
+  @media (max-width: 576px) { /* Teléfonos */
+    font-size: 0.75rem; /* Tamaño más pequeño para teléfonos */
+  }
+  @media (min-width: 577px) and (max-width: 768px) { /* Tabletas */
+    font-size: 0.875rem; /* Tamaño intermedio para tabletas */
+  }
+  @media (min-width: 769px) { /* Escritorio */
+    font-size: 1rem; /* Tamaño base para escritorio */
+  }
+}
+
+p, span, a, label, strong, em, small {
+  font-size: 1rem; /* Tamaño base para pantallas grandes */
+  font-weight: 400;
+
+  @media (max-width: 576px) { /* Teléfonos */
+    font-size: 0.875rem; /* Tamaño más pequeño para teléfonos */
+  }
+  @media (min-width: 577px) and (max-width: 768px) { /* Tabletas */
+    font-size: 1rem; /* Tamaño intermedio para tabletas */
+  }
+  @media (min-width: 769px) { /* Escritorio */
+    font-size: 1rem; /* Tamaño base para escritorio */
+  }
+}
+
+// Clases para tamaños de texto (responsive con límite máximo)
+@each $breakpoint in map-keys($breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    .text-xs {
+      font-size: if($breakpoint == 'xs', $font-size-xs - 2px, if($breakpoint == 'sm', $font-size-xs, $font-size-xs)) !important;
+      line-height: if($breakpoint == 'xs', $line-height-xs, if($breakpoint == 'sm', $line-height-xs, $line-height-xs)) !important;
+    }
+
+    .text-sm {
+      font-size: if($breakpoint == 'xs', $font-size-xs, if($breakpoint == 'sm', $font-size-sm, if($breakpoint == 'md', $font-size-sm, $font-size-sm))) !important;
+      line-height: if($breakpoint == 'xs', $line-height-xs, if($breakpoint == 'sm', $line-height-sm, if($breakpoint == 'md', $line-height-sm, $line-height-sm))) !important;
+    }
+
+    .text-md {
+      font-size: if($breakpoint == 'xs', $font-size-xs + 2px, if($breakpoint == 'sm', $font-size-md, if($breakpoint == 'md', $font-size-md, if($breakpoint == 'lg', $font-size-md, $font-size-md)))) !important;
+      line-height: if($breakpoint == 'xs', $line-height-xs, if($breakpoint == 'sm', $line-height-md, if($breakpoint == 'md', $line-height-md, if($breakpoint == 'lg', $line-height-md, $line-height-md)))) !important;
+    }
+
+    .text-lg {
+      font-size: if($breakpoint == 'xs', $font-size-sm, if($breakpoint == 'sm', $font-size-lg, if($breakpoint == 'md', $font-size-lg, if($breakpoint == 'lg', $font-size-lg, $font-size-lg)))) !important;
+      line-height: if($breakpoint == 'xs', $line-height-sm, if($breakpoint == 'sm', $line-height-lg, if($breakpoint == 'md', $line-height-lg, if($breakpoint == 'lg', $line-height-lg, $line-height-lg)))) !important;
+    }
+
+    .text-xl {
+      font-size: if($breakpoint == 'xs', $font-size-md, if($breakpoint == 'sm', $font-size-xl, if($breakpoint == 'md', $font-size-xl, if($breakpoint == 'lg', $font-size-xl, $font-size-xl)))) !important;
+      line-height: if($breakpoint == 'xs', $line-height-md, if($breakpoint == 'sm', $line-height-xl, if($breakpoint == 'md', $line-height-xl, if($breakpoint == 'lg', $line-height-xl, $line-height-xl)))) !important;
+    }
+
+    .text-xxl {
+      font-size: if($breakpoint == 'xs', $font-size-lg, if($breakpoint == 'sm', $font-size-xxl, if($breakpoint == 'md', $font-size-xxl, if($breakpoint == 'lg', $font-size-xxl, $font-size-xxl)))) !important;
+      line-height: if($breakpoint == 'xs', $line-height-lg, if($breakpoint == 'sm', $line-height-xxl, if($breakpoint == 'md', $line-height-xxl, if($breakpoint == 'lg', $line-height-xxl, $line-height-xxl)))) !important;
+    }
+  }
+}

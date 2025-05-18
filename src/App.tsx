@@ -2,7 +2,8 @@ import './App.css'
 import './styles/_main.scss';
 import { Footer } from './core/components/footer/Footer';
 import { Nav } from './core/components/nav/Nav';
-import { Quotation } from './core/features/quotation/Quotation';
+// import { Quotation } from './core/features/quotation/Quotation';
+import { Plans } from './core/features/plans/Plans';
 
 
 function App() {
@@ -26,7 +27,7 @@ function App() {
         </div>
       </div> */}
 
-      <Quotation/>
+      <Plans/>
 
       <div>
         <Footer />

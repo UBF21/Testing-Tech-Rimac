@@ -8,7 +8,9 @@ $font-size-sm: 16px;
 $font-size-md: 18px;
 $font-size-lg: 20px;
 $font-size-xl: 24px;
-$font-size-xxl: 32px;
+$font-size-xxl: 26px;
+$font-size-xxxl: 28px;
+$font-size-xxxxl: 32px;
 
 $font-weight-light: 300;
 $font-weight-normal: 400;
@@ -26,6 +28,8 @@ $line-height-md: 1.5;  // Coincide con _utilities.scss
 $line-height-lg: 1.6;  // Coincide con _utilities.scss
 $line-height-xl: 1.7;  // Coincide con _utilities.scss
 $line-height-xxl: 1.8; // Coincide con _utilities.scss
+$line-height-xxxl: 1.9;
+$line-height-xxxxl: 2;
 
 $border-radius-base: 4px;
 $border-radius-xs: 2px;   // Casi cuadrado (coincide con _utilities.scss)
@@ -79,7 +83,7 @@ $colors: (
   dark: #03050F,
 
   // Variaciones más claras y oscuras
-  primary-light: #66b0ff, // Azul más claro
+  primary-light: #cae3fe, // Azul más claro
   primary-dark: #0056b3,  // Azul más oscuro
   secondary-light: #a3acb2, // Gris medio claro
   secondary-dark: #4b5459,  // Gris medio oscuro

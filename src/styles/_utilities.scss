@@ -163,6 +163,19 @@
   width: 100% !important;
 }
 
+.w-75 {
+  width: 75% !important;
+}
+
+.w-60 {
+  width: 75% !important;
+}
+
+.w-50 {
+  width: 50% !important;
+}
+
+
 .h-100 {
   height: 100% !important;
 }
@@ -174,6 +187,10 @@
 
 .min-h-50 {
   min-height: 50% !important;
+}
+
+.min-h-75{
+  min-height: 75% !important;
 }
 
 .max-h-100 {
@@ -496,32 +513,32 @@
   line-height: $line-height-xxl;
 }
 
-// Button border-radius variants (fixed, independent of device)
-.btn-rounded-xs {
+//border-radius variants (fixed, independent of device)
+.rounded-xs {
   border-radius: $border-radius-xs !important; // Casi cuadrado
 }
 
-.btn-rounded-sm {
+.rounded-sm {
   border-radius: $border-radius-sm !important; // Poco redondeado
 }
 
-.btn-rounded-md {
+.rounded-md {
   border-radius: $border-radius-md !important; // Redondeo moderado
 }
 
-.btn-rounded-lg {
+.rounded-lg {
   border-radius: $border-radius-lg !important; // Redondeado
 }
 
-.btn-rounded-xl {
+.rounded-xl {
   border-radius: $border-radius-xl !important; // Muy redondeado
 }
 
-.btn-rounded-xxl {
+.rounded-xxl {
   border-radius: $border-radius-xxl !important; // Extremadamente redondeado
 }
 
-.btn-rounded-xxxl {
+.rounded-xxxl {
   border-radius: $border-radius-xxxl !important; // Nivel más redondeado
 }
 
@@ -598,6 +615,16 @@
   line-height: $line-height-xxl;
 }
 
+.text-xxxl {
+  font-size: $font-size-xxxl;
+  line-height: $line-height-xxxl;
+}
+
+.text-xxxxl {
+  font-size: $font-size-xxxxl;
+  line-height: $line-height-xxxxl;
+}
+
 // Clases para grosor de texto (énfasis/bold)
 .font-weight-light {
   font-weight: $font-weight-light;
@@ -651,6 +678,15 @@
 .line-height-xxl {
   line-height: $line-height-xxl;
 }
+
+.line-height-xxxl {
+  line-height: $line-height-xxxl;
+}
+
+.line-height-xxxxl {
+  line-height: $line-height-xxxxl;
+}
+
 
 // Clase base para la fuente por defecto
 .text-base {
@@ -816,4 +852,16 @@ p, span, a, label, strong, em, small {
       line-height: if($breakpoint == 'xs', $line-height-lg, if($breakpoint == 'sm', $line-height-xxl, if($breakpoint == 'md', $line-height-xxl, if($breakpoint == 'lg', $line-height-xxl, $line-height-xxl)))) !important;
     }
   }
+}
+
+.text-center{
+  text-align: center !important;
+}
+
+.text-end{
+  text-align: end !important;
+}
+
+.text-start{
+  text-align: start !important;
 }

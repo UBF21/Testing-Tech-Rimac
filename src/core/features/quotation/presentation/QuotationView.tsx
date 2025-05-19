@@ -45,10 +45,10 @@ export const QuotationView = () => {
                     <h1 className="font-weight-bold text-xxxxl line-height-md anim-in">Creado para ti y tu familia</h1>
                 </div>
                 <div className="col-12 d-lg-none mt-3 mb-3 d-md-none order-3">
-                    <Divider className="bg-gray-400 mt-2 mb-2" />
+                    <Divider className="bg-gray-400 mt-2 mb-2 anim-in" />
                 </div>
                 <div className="col-12 d-lg-none mt-3 d-md-none order-3">
-                    <p className="font-weight-bold text-lg">Tú eliges cuánto pagar. Ingresa tus datos, cotiza y recibe nuestra asesoría. 100% online.</p>
+                    <p className="font-weight-bold text-lg anim-in">Tú eliges cuánto pagar. Ingresa tus datos, cotiza y recibe nuestra asesoría. 100% online.</p>
                 </div>
                 <div className="col-lg-6 mt-4 mt-md-0 order-4 anim-in">
                     <div className="row ml-md-5 ml-lg-5 ml-xl-5 ml-xxl-5">

@@ -1,7 +1,23 @@
+import { useLocation } from "react-router-dom";
+
 export const Nav = () => {
+
+  const location = useLocation();
+
+    const routesWithGradient = [
+        '/'
+    ];
+
+    const shouldHaveGradient = () =>  routesWithGradient.includes(location.pathname);
+
+    const gradient = shouldHaveGradient() 
+        ? "bg-gradient" 
+        : "";
+
+
   return (
-    <div className="container-fluid mt-3">
-      <div className='row align-items-center justify-content-between'>
+    <div className={`container-fluid ${gradient}`}>
+      <div className='row align-items-center justify-content-between mt-3'>
         <div className="col-md-6 d-flex justify-content-center col-5">
           <img src="src\assets\logos\rimac-rojo.png" width={100} height={80} alt="Rimac" className="img-fluid" />
         </div>

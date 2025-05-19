@@ -3,3 +3,16 @@
 @import 'mixins';
 @import 'grid';
 @import 'utilities';
+
+// Contenedor principal del layout
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; // Ocupa al menos toda la altura de la ventana
+}
+
+// El main crece para ocupar el espacio disponible
+.main-content {
+  flex: 1 0 auto; // Crece para ocupar el espacio, pero no se encoge
+}
+

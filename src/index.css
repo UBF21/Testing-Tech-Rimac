@@ -1,11 +1,13 @@
 body {
     min-height: 100%;
-    /* background-image: linear-gradient(to top, #bdc2e8 0%, #bdc2e8 1%, #e6dee9 100%); */
     background-size: cover;
     background-position: center;
     padding: 0;
     margin: 0;
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    line-height: 24px;
+    font-family: 'Lato', sans-serif;
+    color: #141938;
+}
+
+footer {
+    flex-shrink: 0;
 }

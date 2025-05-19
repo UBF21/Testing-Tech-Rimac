@@ -60,11 +60,42 @@
     margin-top: $value !important;
     margin-bottom: $value !important;
   }
+}
 
-  
-  // Clases responsivas (con breakpoints)
-  @each $breakpoint in map-keys($breakpoints) {
-    @include media-breakpoint-up($breakpoint) {
+.m-auto {
+  margin: auto !important;
+}
+
+.mt-auto {
+  margin-top: auto !important;
+}
+
+.mr-auto {
+  margin-right: auto !important;
+}
+
+.mb-auto {
+  margin-bottom: auto !important;
+}
+
+.ml-auto {
+  margin-left: auto !important;
+}
+
+.mx-auto {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.my-auto {
+  margin-top: auto !important;
+  margin-bottom: auto !important;
+}
+
+// Clases responsivas (con breakpoints)
+@each $breakpoint in map-keys($breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    @each $spacer, $value in $spacers {
       .p-#{$breakpoint}-#{$spacer} {
         padding: $value !important;
       }
@@ -124,10 +155,40 @@
         margin-top: $value !important;
         margin-bottom: $value !important;
       }
+
+      // Márgenes "auto" responsivos
+      .m-#{$breakpoint}-auto {
+        margin: auto !important;
+      }
+
+      .mt-#{$breakpoint}-auto {
+        margin-top: auto !important;
+      }
+
+      .mr-#{$breakpoint}-auto {
+        margin-right: auto !important;
+      }
+
+      .mb-#{$breakpoint}-auto {
+        margin-bottom: auto !important;
+      }
+
+      .ml-#{$breakpoint}-auto {
+        margin-left: auto !important;
+      }
+
+      .mx-#{$breakpoint}-auto {
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+
+      .my-#{$breakpoint}-auto {
+        margin-top: auto !important;
+        margin-bottom: auto !important;
+      }
     }
   }
 }
-
 
 
 // Utilidades para min-width y max-width en porcentajes
@@ -168,10 +229,14 @@
 }
 
 .w-60 {
-  width: 75% !important;
+  width: 60% !important; // Corregido de 75% a 60% para que sea consistente
 }
 
 .w-50 {
+  width: 50% !important;
+}
+
+.w-25 {
   width: 50% !important;
 }
 
@@ -189,12 +254,30 @@
   min-height: 50% !important;
 }
 
-.min-h-75{
+.min-h-75 {
   min-height: 75% !important;
 }
 
 .max-h-100 {
   max-height: 100% !important;
+}
+
+// Variantes responsivas para width
+@each $breakpoint in map-keys($breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    .w-#{$breakpoint}-100 {
+      width: 100% !important;
+    }
+    .w-#{$breakpoint}-75 {
+      width: 75% !important;
+    }
+    .w-#{$breakpoint}-60 {
+      width: 60% !important;
+    }
+    .w-#{$breakpoint}-50 {
+      width: 50% !important;
+    }
+  }
 }
 
 // Utilidades para viewport height (vh)
@@ -321,7 +404,6 @@
   align-items: stretch !important;
 }
 
-// Flexbox utilities (responsive)
 @each $breakpoint in map-keys($breakpoints) {
   @include media-breakpoint-up($breakpoint) {
     .d-#{$breakpoint}-flex {
@@ -365,7 +447,7 @@
     }
 
     .justify-content-#{$breakpoint}-between {
-      justify-content: space-between !important
+      justify-content: space-between !important;
     }
 
     .align-items-#{$breakpoint}-start {
@@ -389,7 +471,6 @@
     }
   }
 }
-
 
 // Order utilities
 @each $value in $order-values {
@@ -511,6 +592,48 @@
   padding: 1.25rem 2.5rem;
   font-size: $font-size-xxl;
   line-height: $line-height-xxl;
+}
+
+// Button display utilities
+.btn-inline {
+  display: inline !important;
+}
+
+.btn-block {
+  display: block !important;
+  width: 100%;
+  max-width: 100%; // Evita desbordamiento
+}
+
+.btn-inline-block {
+  display: inline-block !important;
+}
+
+.btn-flex {
+  display: flex !important;
+}
+
+// Responsive button display variants
+@each $breakpoint in map-keys($breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    .btn-#{$breakpoint}-inline {
+      display: inline !important;
+    }
+
+    .btn-#{$breakpoint}-block {
+      display: block !important;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .btn-#{$breakpoint}-inline-block {
+      display: inline-block !important;
+    }
+
+    .btn-#{$breakpoint}-flex {
+      display: flex !important;
+    }
+  }
 }
 
 //border-radius variants (fixed, independent of device)
@@ -687,8 +810,66 @@
   line-height: $line-height-xxxxl;
 }
 
+.text-center {
+  text-align: center !important;
+}
 
-// Clase base para la fuente por defecto
+.text-end {
+  text-align: end !important;
+}
+
+.text-start {
+  text-align: start !important;
+}
+
+@each $breakpoint in map-keys($breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    .text-#{$breakpoint}-center {
+      text-align: center !important;
+    }
+
+    .text-#{$breakpoint}-end {
+      text-align: end !important;
+    }
+
+    .text-#{$breakpoint}-start {
+      text-align: start !important;
+    }
+  }
+}
+
+.text-decoration-none {
+  text-decoration: none !important;
+}
+
+.text-decoration-underline {
+  text-decoration: underline;
+}
+
+.text-decoration-line-through {
+  text-decoration: line-through;
+}
+
+.text-decoration-underline-skip-ink {
+  text-decoration: underline-skip-ink;
+}
+
+.text-decoration-underline-skip-ink-overline {
+  text-decoration: underline-skip-ink-overline;
+}
+
+.text-decoration-underline-skip-ink-overline-line-through {
+  text-decoration: underline-skip-ink-overline-line-through;
+}
+
+.text-decoration-underline-skip-ink-overline-line-through-line-through {
+  text-decoration: underline-skip-ink-overline-line-through-line-through;
+}
+
+.text-decoration-underline-skip-ink-overline-line-through-line-through-line-through {
+  text-decoration: underline-skip;
+}
+
 .text-base {
   font-family: $font-family;
   font-size: $font-size-base;
@@ -696,7 +877,6 @@
   font-weight: $font-weight-normal;
 }
 
-// Clase para un chip personalizado con fondo gradiente
 .chip {
   display: inline-block;
   background: linear-gradient(90deg, map-get($colors, success) 0%, map-get($colors, primary) 100%);
@@ -707,115 +887,200 @@
 
   @each $breakpoint in map-keys($breakpoints) {
     @include media-breakpoint-up($breakpoint) {
-      font-size: if($breakpoint == 'xs', $font-size-xs, if($breakpoint == 'sm', $font-size-sm, if($breakpoint == 'md', $font-size-sm, $font-size-sm))) !important;
-      line-height: if($breakpoint == 'xs', $line-height-xs, if($breakpoint == 'sm', $line-height-sm, if($breakpoint == 'md', $line-height-sm, $line-height-sm))) !important;
+      font-size: if($breakpoint =='xs', $font-size-xs, if($breakpoint =='sm', $font-size-sm, if($breakpoint =='md', $font-size-sm, $font-size-sm))) !important;
+      line-height: if($breakpoint =='xs', $line-height-xs, if($breakpoint =='sm', $line-height-sm, if($breakpoint =='md', $line-height-sm, $line-height-sm))) !important;
+    }
+  }
+}
+
+.chip-suggestion {
+  display: inline-block;
+  background-color: #7DF0BA;
+  color: #03050F;
+  font-weight: $font-weight-bold;
+  padding: 4px 12px;
+  border-radius: $border-radius-sm;
+
+  @each $breakpoint in map-keys($breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+      font-size: if($breakpoint =='xs', $font-size-xs, if($breakpoint =='sm', $font-size-sm, if($breakpoint =='md', $font-size-sm, $font-size-sm))) !important;
+      line-height: if($breakpoint =='xs', $line-height-xs, if($breakpoint =='sm', $line-height-sm, if($breakpoint =='md', $line-height-sm, $line-height-sm))) !important;
     }
   }
 }
 
 // Definición de tamaños base y responsivos para cada elemento de texto
 h1 {
-  font-size: 2.5rem; /* Tamaño base para pantallas grandes */
+  font-size: 2.5rem;
+  /* Tamaño base para pantallas grandes */
   font-weight: 600;
 
-  @media (max-width: 576px) { /* Teléfonos */
-    font-size: 1.5rem; /* Tamaño más pequeño para teléfonos */
+  @media (max-width: 576px) {
+    /* Teléfonos */
+    font-size: 1.5rem;
+    /* Tamaño más pequeño para teléfonos */
   }
-  @media (min-width: 577px) and (max-width: 768px) { /* Tabletas */
-    font-size: 2rem; /* Tamaño intermedio para tabletas */
+
+  @media (min-width: 577px) and (max-width: 768px) {
+    /* Tabletas */
+    font-size: 2rem;
+    /* Tamaño intermedio para tabletas */
   }
-  @media (min-width: 769px) { /* Escritorio */
-    font-size: 2.5rem; /* Tamaño base para escritorio */
+
+  @media (min-width: 769px) {
+    /* Escritorio */
+    font-size: 2.5rem;
+    /* Tamaño base para escritorio */
   }
 }
 
 h2 {
-  font-size: 2rem; /* Tamaño base para pantallas grandes */
+  font-size: 2rem;
+  /* Tamaño base para pantallas grandes */
   font-weight: 600;
 
-  @media (max-width: 576px) { /* Teléfonos */
-    font-size: 1.25rem; /* Tamaño más pequeño para teléfonos */
+  @media (max-width: 576px) {
+    /* Teléfonos */
+    font-size: 1.25rem;
+    /* Tamaño más pequeño para teléfonos */
   }
-  @media (min-width: 577px) and (max-width: 768px) { /* Tabletas */
-    font-size: 1.75rem; /* Tamaño intermedio para tabletas */
+
+  @media (min-width: 577px) and (max-width: 768px) {
+    /* Tabletas */
+    font-size: 1.75rem;
+    /* Tamaño intermedio para tabletas */
   }
-  @media (min-width: 769px) { /* Escritorio */
-    font-size: 2rem; /* Tamaño base para escritorio */
+
+  @media (min-width: 769px) {
+    /* Escritorio */
+    font-size: 2rem;
+    /* Tamaño base para escritorio */
   }
 }
 
 h3 {
-  font-size: 1.75rem; /* Tamaño base para pantallas grandes */
+  font-size: 1.75rem;
+  /* Tamaño base para pantallas grandes */
   font-weight: 600;
 
-  @media (max-width: 576px) { /* Teléfonos */
-    font-size: 1.125rem; /* Tamaño más pequeño para teléfonos */
+  @media (max-width: 576px) {
+    /* Teléfonos */
+    font-size: 1.125rem;
+    /* Tamaño más pequeño para teléfonos */
   }
-  @media (min-width: 577px) and (max-width: 768px) { /* Tabletas */
-    font-size: 1.5rem; /* Tamaño intermedio para tabletas */
+
+  @media (min-width: 577px) and (max-width: 768px) {
+    /* Tabletas */
+    font-size: 1.5rem;
+    /* Tamaño intermedio para tabletas */
   }
-  @media (min-width: 769px) { /* Escritorio */
-    font-size: 1.75rem; /* Tamaño base para escritorio */
+
+  @media (min-width: 769px) {
+    /* Escritorio */
+    font-size: 1.75rem;
+    /* Tamaño base para escritorio */
   }
 }
 
 h4 {
-  font-size: 1.5rem; /* Tamaño base para pantallas grandes */
+  font-size: 1.5rem;
+  /* Tamaño base para pantallas grandes */
   font-weight: 600;
 
-  @media (max-width: 576px) { /* Teléfonos */
-    font-size: 1rem; /* Tamaño más pequeño para teléfonos */
+  @media (max-width: 576px) {
+    /* Teléfonos */
+    font-size: 1rem;
+    /* Tamaño más pequeño para teléfonos */
   }
-  @media (min-width: 577px) and (max-width: 768px) { /* Tabletas */
-    font-size: 1.25rem; /* Tamaño intermedio para tabletas */
+
+  @media (min-width: 577px) and (max-width: 768px) {
+    /* Tabletas */
+    font-size: 1.25rem;
+    /* Tamaño intermedio para tabletas */
   }
-  @media (min-width: 769px) { /* Escritorio */
-    font-size: 1.5rem; /* Tamaño base para escritorio */
+
+  @media (min-width: 769px) {
+    /* Escritorio */
+    font-size: 1.5rem;
+    /* Tamaño base para escritorio */
   }
 }
 
 h5 {
-  font-size: 1.25rem; /* Tamaño base para pantallas grandes */
+  font-size: 1.25rem;
+  /* Tamaño base para pantallas grandes */
   font-weight: 600;
 
-  @media (max-width: 576px) { /* Teléfonos */
-    font-size: 0.875rem; /* Tamaño más pequeño para teléfonos */
+  @media (max-width: 576px) {
+    /* Teléfonos */
+    font-size: 0.875rem;
+    /* Tamaño más pequeño para teléfonos */
   }
-  @media (min-width: 577px) and (max-width: 768px) { /* Tabletas */
-    font-size: 1rem; /* Tamaño intermedio para tabletas */
+
+  @media (min-width: 577px) and (max-width: 768px) {
+    /* Tabletas */
+    font-size: 1rem;
+    /* Tamaño intermedio para tabletas */
   }
-  @media (min-width: 769px) { /* Escritorio */
-    font-size: 1.25rem; /* Tamaño base para escritorio */
+
+  @media (min-width: 769px) {
+    /* Escritorio */
+    font-size: 1.25rem;
+    /* Tamaño base para escritorio */
   }
 }
 
 h6 {
-  font-size: 1rem; /* Tamaño base para pantallas grandes */
+  font-size: 1rem;
+  /* Tamaño base para pantallas grandes */
   font-weight: 600;
 
-  @media (max-width: 576px) { /* Teléfonos */
-    font-size: 0.75rem; /* Tamaño más pequeño para teléfonos */
+  @media (max-width: 576px) {
+    /* Teléfonos */
+    font-size: 0.75rem;
+    /* Tamaño más pequeño para teléfonos */
   }
-  @media (min-width: 577px) and (max-width: 768px) { /* Tabletas */
-    font-size: 0.875rem; /* Tamaño intermedio para tabletas */
+
+  @media (min-width: 577px) and (max-width: 768px) {
+    /* Tabletas */
+    font-size: 0.875rem;
+    /* Tamaño intermedio para tabletas */
   }
-  @media (min-width: 769px) { /* Escritorio */
-    font-size: 1rem; /* Tamaño base para escritorio */
+
+  @media (min-width: 769px) {
+    /* Escritorio */
+    font-size: 1rem;
+    /* Tamaño base para escritorio */
   }
 }
 
-p, span, a, label, strong, em, small {
-  font-size: 1rem; /* Tamaño base para pantallas grandes */
+p,
+span,
+a,
+label,
+strong,
+em,
+small {
+  font-size: 1rem;
+  /* Tamaño base para pantallas grandes */
   font-weight: 400;
 
-  @media (max-width: 576px) { /* Teléfonos */
-    font-size: 0.875rem; /* Tamaño más pequeño para teléfonos */
+  @media (max-width: 576px) {
+    /* Teléfonos */
+    font-size: 0.875rem;
+    /* Tamaño más pequeño para teléfonos */
   }
-  @media (min-width: 577px) and (max-width: 768px) { /* Tabletas */
-    font-size: 1rem; /* Tamaño intermedio para tabletas */
+
+  @media (min-width: 577px) and (max-width: 768px) {
+    /* Tabletas */
+    font-size: 1rem;
+    /* Tamaño intermedio para tabletas */
   }
-  @media (min-width: 769px) { /* Escritorio */
-    font-size: 1rem; /* Tamaño base para escritorio */
+
+  @media (min-width: 769px) {
+    /* Escritorio */
+    font-size: 1rem;
+    /* Tamaño base para escritorio */
   }
 }
 
@@ -823,45 +1088,209 @@ p, span, a, label, strong, em, small {
 @each $breakpoint in map-keys($breakpoints) {
   @include media-breakpoint-up($breakpoint) {
     .text-xs {
-      font-size: if($breakpoint == 'xs', $font-size-xs - 2px, if($breakpoint == 'sm', $font-size-xs, $font-size-xs)) !important;
-      line-height: if($breakpoint == 'xs', $line-height-xs, if($breakpoint == 'sm', $line-height-xs, $line-height-xs)) !important;
+      font-size: if($breakpoint =='xs', $font-size-xs - 2px, if($breakpoint =='sm', $font-size-xs, $font-size-xs)) !important;
+      line-height: if($breakpoint =='xs', $line-height-xs, if($breakpoint =='sm', $line-height-xs, $line-height-xs)) !important;
     }
 
     .text-sm {
-      font-size: if($breakpoint == 'xs', $font-size-xs, if($breakpoint == 'sm', $font-size-sm, if($breakpoint == 'md', $font-size-sm, $font-size-sm))) !important;
-      line-height: if($breakpoint == 'xs', $line-height-xs, if($breakpoint == 'sm', $line-height-sm, if($breakpoint == 'md', $line-height-sm, $line-height-sm))) !important;
+      font-size: if($breakpoint =='xs', $font-size-xs, if($breakpoint =='sm', $font-size-sm, if($breakpoint =='md', $font-size-sm, $font-size-sm))) !important;
+      line-height: if($breakpoint =='xs', $line-height-xs, if($breakpoint =='sm', $line-height-sm, if($breakpoint =='md', $line-height-sm, $line-height-sm))) !important;
     }
 
     .text-md {
-      font-size: if($breakpoint == 'xs', $font-size-xs + 2px, if($breakpoint == 'sm', $font-size-md, if($breakpoint == 'md', $font-size-md, if($breakpoint == 'lg', $font-size-md, $font-size-md)))) !important;
-      line-height: if($breakpoint == 'xs', $line-height-xs, if($breakpoint == 'sm', $line-height-md, if($breakpoint == 'md', $line-height-md, if($breakpoint == 'lg', $line-height-md, $line-height-md)))) !important;
+      font-size: if($breakpoint =='xs', $font-size-xs + 2px, if($breakpoint =='sm', $font-size-md, if($breakpoint =='md', $font-size-md, if($breakpoint =='lg', $font-size-md, $font-size-md)))) !important;
+      line-height: if($breakpoint =='xs', $line-height-xs, if($breakpoint =='sm', $line-height-md, if($breakpoint =='md', $line-height-md, if($breakpoint =='lg', $line-height-md, $line-height-md)))) !important;
     }
 
     .text-lg {
-      font-size: if($breakpoint == 'xs', $font-size-sm, if($breakpoint == 'sm', $font-size-lg, if($breakpoint == 'md', $font-size-lg, if($breakpoint == 'lg', $font-size-lg, $font-size-lg)))) !important;
-      line-height: if($breakpoint == 'xs', $line-height-sm, if($breakpoint == 'sm', $line-height-lg, if($breakpoint == 'md', $line-height-lg, if($breakpoint == 'lg', $line-height-lg, $line-height-lg)))) !important;
+      font-size: if($breakpoint =='xs', $font-size-sm, if($breakpoint =='sm', $font-size-lg, if($breakpoint =='md', $font-size-lg, if($breakpoint =='lg', $font-size-lg, $font-size-lg)))) !important;
+      line-height: if($breakpoint =='xs', $line-height-sm, if($breakpoint =='sm', $line-height-lg, if($breakpoint =='md', $line-height-lg, if($breakpoint =='lg', $line-height-lg, $line-height-lg)))) !important;
     }
 
     .text-xl {
-      font-size: if($breakpoint == 'xs', $font-size-md, if($breakpoint == 'sm', $font-size-xl, if($breakpoint == 'md', $font-size-xl, if($breakpoint == 'lg', $font-size-xl, $font-size-xl)))) !important;
-      line-height: if($breakpoint == 'xs', $line-height-md, if($breakpoint == 'sm', $line-height-xl, if($breakpoint == 'md', $line-height-xl, if($breakpoint == 'lg', $line-height-xl, $line-height-xl)))) !important;
+      font-size: if($breakpoint =='xs', $font-size-md, if($breakpoint =='sm', $font-size-xl, if($breakpoint =='md', $font-size-xl, if($breakpoint =='lg', $font-size-xl, $font-size-xl)))) !important;
+      line-height: if($breakpoint =='xs', $line-height-md, if($breakpoint =='sm', $line-height-xl, if($breakpoint =='md', $line-height-xl, if($breakpoint =='lg', $line-height-xl, $line-height-xl)))) !important;
     }
 
     .text-xxl {
-      font-size: if($breakpoint == 'xs', $font-size-lg, if($breakpoint == 'sm', $font-size-xxl, if($breakpoint == 'md', $font-size-xxl, if($breakpoint == 'lg', $font-size-xxl, $font-size-xxl)))) !important;
-      line-height: if($breakpoint == 'xs', $line-height-lg, if($breakpoint == 'sm', $line-height-xxl, if($breakpoint == 'md', $line-height-xxl, if($breakpoint == 'lg', $line-height-xxl, $line-height-xxl)))) !important;
+      font-size: if($breakpoint =='xs', $font-size-lg, if($breakpoint =='sm', $font-size-xxl, if($breakpoint =='md', $font-size-xxl, if($breakpoint =='lg', $font-size-xxl, $font-size-xxl)))) !important;
+      line-height: if($breakpoint =='xs', $line-height-lg, if($breakpoint =='sm', $line-height-xxl, if($breakpoint =='md', $line-height-xxl, if($breakpoint =='lg', $line-height-xxl, $line-height-xxl)))) !important;
     }
   }
 }
 
-.text-center{
-  text-align: center !important;
+
+@each $level, $shadow-value in $shadows {
+  .shadow-#{$level} {
+    box-shadow: $shadow-value !important;
+  }
 }
 
-.text-end{
-  text-align: end !important;
+// Clases para cambiar el color de la sombra
+@each $color-name, $color-value in $colors {
+  .shadow-color-#{$color-name} {
+    box-shadow: 0 1px 2px rgba($color-value, 0.1),
+      0 2px 4px rgba($color-value, 0.15),
+      0 4px 8px rgba($color-value, 0.2),
+      0 6px 12px rgba($color-value, 0.25),
+      0 8px 16px rgba($color-value, 0.3) !important;
+  }
 }
 
-.text-start{
-  text-align: start !important;
+.hvr-push {
+  transition: transform 0.5s ease, box-shadow 0.5s ease-in;
+
+  &:hover {
+    transform: translateY(4px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22) !important;
+  }
+}
+
+.anim-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.border-solid {
+  border-style: solid !important;
+}
+
+.border-dashed {
+  border-style: dashed !important;
+}
+
+.border-dotted {
+  border-style: dotted !important;
+}
+
+.border-none {
+  border-style: none !important;
+}
+
+@each $spacer, $value in $spacers {
+  .border-#{$spacer} {
+    border-width: $value !important;
+  }
+
+  .border-t-#{$spacer} {
+    border-top-width: $value !important;
+  }
+
+  .border-r-#{$spacer} {
+    border-right-width: $value !important;
+  }
+
+  .border-b-#{$spacer} {
+    border-bottom-width: $value !important;
+  }
+
+  .border-l-#{$spacer} {
+    border-left-width: $value !important;
+  }
+}
+
+// Color del borde
+@each $color-name, $color-value in $colors {
+  .border-#{$color-name} {
+    border-color: $color-value !important;
+  }
+
+  .border-t-#{$color-name} {
+    border-top-color: $color-value !important;
+  }
+
+  .border-r-#{$color-name} {
+    border-right-color: $color-value !important;
+  }
+
+  .border-b-#{$color-name} {
+    border-bottom-color: $color-value !important;
+  }
+
+  .border-l-#{$color-name} {
+    border-left-color: $color-value !important;
+  }
+}
+
+// Clases responsivas para bordes
+@each $breakpoint in map-keys($breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    // Tipos de borde responsivos
+    .border-#{$breakpoint}-solid {
+      border-style: solid !important;
+    }
+
+    .border-#{$breakpoint}-dashed {
+      border-style: dashed !important;
+    }
+
+    .border-#{$breakpoint}-dotted {
+      border-style: dotted !important;
+    }
+
+    .border-#{$breakpoint}-none {
+      border-style: none !important;
+    }
+
+    // Grosor del borde responsivo
+    @each $spacer, $value in $spacers {
+      .border-#{$breakpoint}-#{$spacer} {
+        border-width: $value !important;
+      }
+
+      .border-t-#{$breakpoint}-#{$spacer} {
+        border-top-width: $value !important;
+      }
+
+      .border-r-#{$breakpoint}-#{$spacer} {
+        border-right-width: $value !important;
+      }
+
+      .border-b-#{$breakpoint}-#{$spacer} {
+        border-bottom-width: $value !important;
+      }
+
+      .border-l-#{$breakpoint}-#{$spacer} {
+        border-left-width: $value !important;
+      }
+    }
+
+    // Color del borde responsivo
+    @each $color-name, $color-value in $colors {
+      .border-#{$breakpoint}-#{$color-name} {
+        border-color: $color-value !important;
+      }
+
+      .border-t-#{$breakpoint}-#{$color-name} {
+        border-top-color: $color-value !important;
+      }
+
+      .border-r-#{$breakpoint}-#{$color-name} {
+        border-right-color: $color-value !important;
+      }
+
+      .border-b-#{$breakpoint}-#{$color-name} {
+        border-bottom-color: $color-value !important;
+      }
+
+      .border-l-#{$breakpoint}-#{$color-name} {
+        border-left-color: $color-value !important;
+      }
+    }
+  }
+}
+
+.bg-gradient{
+     background: linear-gradient(to right, #6B46C1 -30%, #FFFFFF 20%, #FFFFFF 80%, #6B46C1 130%);
 }

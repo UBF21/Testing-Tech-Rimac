@@ -8,6 +8,7 @@ import { useUserStore } from "../../../shared/stores/userStore";
 import { usePlanStore } from "../../../shared/stores/planStore";
 import { usePlanOptionStore } from "../../../shared/stores/PlanOptionStore";
 
+
 const steps = [
     'Planes y coberturas',
     'Resumen'
@@ -28,8 +29,9 @@ export const LayoutPlanView = () => {
             clearPlan;
             clearPlanOption;
             useStepStore.setState({ step: 0 })
-        };
-        useStepStore.setState({ step: step - 1 });
+        }else{
+            useStepStore.setState({ step: step - 1 });
+        }
     }
 
     return (
@@ -64,14 +66,16 @@ export const LayoutPlanView = () => {
 
             <main>
                 <div className="container d-none d-md-block mt-4">
-                    <div className="d-flex align-items-center justify-content-start">
+                    <a className="text-decoration-none cursor-pointer">
+                    <div className="d-flex align-items-center justify-content-start" onClick={changePrevius}>
                         <div>
-                            <ArrowCircleLeftOutlinedIcon fontSize="large" className="text-blue-berry" onClick={changePrevius} />
+                            <ArrowCircleLeftOutlinedIcon fontSize="large" className="text-blue-berry"/>
                         </div>
                         <div>
                             <span className="font-weight-bold text-xl text-blue-berry">Volver</span>
                         </div>
                     </div>
+                    </a>
                 </div>
 
                 <div className="bg-light">

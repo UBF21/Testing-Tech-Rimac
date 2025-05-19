@@ -1,1 +1,1 @@
-export const API_BASE_URL = "https://rimac-front-end-challenge.netlify.app/";
+export const API_BASE_URL = import.meta.env.VITE_BASE_URL;

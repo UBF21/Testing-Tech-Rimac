@@ -4,4 +4,8 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  build: {
+    outDir: 'dist', // Carpeta de salida
+    assetsDir: 'assets', // Carpeta donde se copiarán los assets en dist
+  },
 })

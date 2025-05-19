@@ -12,6 +12,9 @@ import { useUserStore } from "../../../shared/stores/userStore";
 import { usePlanStore } from "../../../shared/stores/planStore";
 import { useStepStore } from "../../../shared/stores/stepStore";
 import { usePlanOptionStore } from "../../../shared/stores/PlanOptionStore";
+import imageForMe from "../../../../assets/icons/para-mi.png";
+import imageForSomeoneElse from "../../../../assets/icons/para-alguien-mas.png";
+import PlanCasa from "../../../../assets/icons/plan-casa.png";
 
 export interface PlanOption {
     id: string;
@@ -27,14 +30,14 @@ const PlanOptions: PlanOption[] = [
         value: 'for-me',
         title: 'Para mí',
         description: 'Cotiza tu seguro de salud y agrega familiares si así lo deseas.',
-        icon: 'src/assets/icons/para-mi.png', // Ajusta la ruta según sea necesario
+        icon: imageForMe, // Ajusta la ruta según sea necesario
     },
     {
         id: 'for-someone-else',
         value: 'for-someone-else',
         title: 'Para alguien más',
         description: 'Realiza una cotización para uno de tus familiares o cualquier persona.',
-        icon: 'src/assets/icons/para-alguien-mas.png', // Ajusta la ruta según sea necesario
+        icon: imageForSomeoneElse, // Ajusta la ruta según sea necesario
     },
 ];
 
@@ -155,7 +158,7 @@ export const PlanView = () => {
                                         <h2 className="text-xxl text-lg">{plan.name}</h2>
                                     </div>
                                     <div className="col-4 text-end">
-                                        <img src="src\assets\icons\para-mi.png" width={50} alt="para mi" />
+                                        <img src={PlanCasa} width={50} alt="para mi" />
                                     </div>
                                 </div>
                                 <p className="text-xs p-0 mb-0 mb-1 font-weight-semibold text-Neutrals">COSTO DEL PLAN</p>

@@ -5,6 +5,8 @@ import { useEffect, useState, type ChangeEvent } from "react";
 import { QuotationValidations } from "../../../shared/validations/quotation.validation";
 import { useQuotationStore } from "../../../shared/stores/quotationStore";
 import { useNavigate } from "react-router-dom";
+import imagePrincipal from "../../../../assets/images/image-principal.png";
+
 
 export const QuotationView = () => {
 
@@ -36,7 +38,7 @@ export const QuotationView = () => {
         <div className="container d-flex justify-content-center align-items-center mt-5 mb-3">
             <div className="row p-2 p-md-0">
                 <div className="col-lg-6 col-5 order-2">
-                    <img src="src\assets\images\image-principal.png" className="img-fluid anim-in" />
+                    <img src={imagePrincipal} className="img-fluid anim-in" />
                 </div>
                 <div className="col-lg-6 col-7 mt-4 mt-md-0 d-lg-none d-md-none order-1">
                     <span className="chip font-weight-bold text-xs">Seguro Salud Flexible</span>

@@ -7,7 +7,6 @@ import { useNavigate } from "react-router-dom";
 import { useUserStore } from "../../../shared/stores/userStore";
 import { usePlanStore } from "../../../shared/stores/planStore";
 import { usePlanOptionStore } from "../../../shared/stores/PlanOptionStore";
-import { useEffect } from "react";
 
 const steps = [
     'Planes y coberturas',

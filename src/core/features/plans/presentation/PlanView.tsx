@@ -116,7 +116,7 @@ export const PlanView = () => {
                                                     color="success"
                                                     size="medium"
                                                     id={option.id}
-                                                    onChange={(e: ChangeEvent<HTMLInputElement>) => {
+                                                    onChange={(_) => {
                                                         setSelectedValue(option.value);
                                                         setPlanOption(option);
                                                     }}

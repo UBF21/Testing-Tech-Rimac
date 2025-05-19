@@ -40,9 +40,9 @@ export const QuotationView = () => {
                 <div className="col-lg-6 col-5 order-2">
                     <img src={imagePrincipal} className="img-fluid anim-in" />
                 </div>
-                <div className="col-lg-6 col-7 mt-4 mt-md-0 d-lg-none d-md-none order-1 anim-in">
-                    <span className="chip font-weight-bold text-xs">Seguro Salud Flexible</span>
-                    <h1 className="font-weight-bold text-xxxxl line-height-md">Creado para ti y tu familia</h1>
+                <div className="col-lg-6 col-7 mt-4 mt-md-0 d-lg-none d-md-none order-1">
+                    <span className="chip font-weight-bold text-xs anim-in">Seguro Salud Flexible</span>
+                    <h1 className="font-weight-bold text-xxxxl line-height-md anim-in">Creado para ti y tu familia</h1>
                 </div>
                 <div className="col-12 d-lg-none mt-3 mb-3 d-md-none order-3">
                     <Divider className="bg-gray-400 mt-2 mb-2" />

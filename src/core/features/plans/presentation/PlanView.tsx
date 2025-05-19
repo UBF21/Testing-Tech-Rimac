@@ -7,7 +7,7 @@ import type { PlanItem } from "../domain/plan.entity";
 import type { User } from "../domain/user.entiy";
 import { userService } from "../services/user.service";
 import { calculateAge, calculateDiscountedPrice } from "../../../shared/utils/utils";
-import { useEffect, useState, type ChangeEvent } from "react";
+import { useEffect, useState } from "react";
 import { useUserStore } from "../../../shared/stores/userStore";
 import { usePlanStore } from "../../../shared/stores/planStore";
 import { useStepStore } from "../../../shared/stores/stepStore";

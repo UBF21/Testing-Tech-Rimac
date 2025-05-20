@@ -57,6 +57,11 @@ export const PlanView = () => {
         setStep(1);
     };
 
+    const onClickSelectedOption = (planOption: PlanOption) => {
+        if (selectedValue == planOption.value) return;
+        setSelectedValue(planOption.value);
+    };
+
     useEffect(() => { if (user) setUser(user) }, [user, setUser]);
 
 
@@ -109,8 +114,9 @@ export const PlanView = () => {
                             PlanOptions.map((option) => (
 
                                 <div className="col-lg-3 col-12 mb-3 mb-lg-0 d-flex justify-content-center" key={crypto.randomUUID()}>
-                                    <a href="#" className="text-decoration-none w-100" onClick={() => setSelectedValue(option.value)}>
-                                        <Card className={`w-100 p-4 rounded-xxxl shadow-4 shadow-color-info-light hvr-push anim-in ${selectedValue === option.value ? 'border-solid border-1 border-dark' : ''}`}>
+                                    <a className="text-decoration-none w-md-75 w-lg-100 w-75" onClick={() => onClickSelectedOption(option)}
+                                    >
+                                        <Card className={`w-md-100 p-4 rounded-xxxl shadow-4 shadow-color-info-light hvr-push anim-in ${selectedValue === option.value ? 'border-solid border-1 border-dark' : ''}`}>
                                             <p className="text-end">
                                                 <Radio
                                                     checked={selectedValue === option.value}

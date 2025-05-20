@@ -23,7 +23,7 @@ export const Nav = () => {
     <div className={`container-fluid ${gradient}`}>
       <div className='row align-items-center p-4 justify-content-between mt-3'>
         <div className="col-md-6 d-flex justify-content-center col-5">
-          <img src={rimacRojo} width={100} height={80} alt="Rimac" className="img-fluid" />
+          <img src={rimacRojo}  width={70} height={50} alt="Rimac" className="img-fluid" />
         </div>
         <div className="col-md-6 d-flex  justify-content-center col-5">
           <img src={compraMedios} alt="Rimac" width={320} className="img-fluid d-none d-md-block" />

@@ -7,7 +7,7 @@ export const Footer = () => {
     <footer className="container-fluid bg-dark p-4">
       <div className='row align-items-center'>
         <div className="col-md-6 col-12 d-flex justify-content-center">
-          <img src={rimacBlanco} width={100} height={80} alt="Rimac" className="img-fluid" />
+          <img src={rimacBlanco} width={70} height={50} alt="Rimac" className="img-fluid" />
         </div>
         <div className="col-12 d-lg-none mt-4 mb-4">
           <Divider className="bg-light" />

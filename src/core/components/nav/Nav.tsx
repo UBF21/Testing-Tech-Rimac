@@ -33,7 +33,7 @@ export const Nav = () => {
               <img src={phone} alt="Rimac" width={26} className="img-fluid" />
               </div>
               <div className="ml-2">
-                <p className="p-0 m-0 font-weight-bold text-lg">(01) 411 6001</p>
+                <p className="p-0 m-0 font-weight-bold text-sm">(01) 411 6001</p>
               </div>
             </div>
           </div>

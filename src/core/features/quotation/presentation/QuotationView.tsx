@@ -1,4 +1,4 @@
-import { Checkbox, Divider, FormControlLabel, FormHelperText, Link, MenuItem, Select, TextField, type SelectChangeEvent } from "@mui/material";
+import { Backdrop, Checkbox, CircularProgress, Divider, FormControlLabel, FormHelperText, Link, MenuItem, Select, TextField, type SelectChangeEvent } from "@mui/material";
 import { initialQuotation, type Quotation } from "../domain/Quotation.entity";
 import { ValiValid, type FormErrors } from "vali-valid";
 import { useEffect, useState, type ChangeEvent } from "react";
@@ -13,19 +13,24 @@ export const QuotationView = () => {
     const [formQuotation, setFormQuotation] = useState<Quotation>(initialQuotation);
     const [errors, setErrors] = useState<FormErrors<Quotation>>({});
     const [isFormValid, setIsFormValid] = useState<boolean>(false);
+    const [open, setOpen] = useState(false);
     const setQuotation = useQuotationStore((state) => state.setQuotation);
     const navigate = useNavigate();
 
 
     const managerValidation = new ValiValid<Quotation>(setIsFormValid, QuotationValidations);
 
-    const handleChange = (field: keyof Quotation, value: any): void => {
-        managerValidation.handleChange(field, value, setFormQuotation, setErrors);
-    };
+    const handleChange = (field: keyof Quotation, value: any): void => managerValidation.handleChange(field, value, setFormQuotation, setErrors);
+    const handleClose = () => setOpen(false);
+    const handleOpen = () => setOpen(true);
 
     const onSubmit = () => {
         setQuotation(formQuotation);
-        navigate("/plans");
+        handleOpen();
+        setTimeout(() => {
+            handleClose();
+            navigate("/plans");
+        }, 2000);
     }
 
     useEffect(() => {
@@ -36,6 +41,14 @@ export const QuotationView = () => {
     return (
 
         <div className="container d-flex justify-content-center align-items-center mt-5 mb-3">
+            <Backdrop
+                sx={(theme) => ({ color: '#fff', zIndex: theme.zIndex.drawer + 1 })}
+                open={open}
+                onClick={handleClose}
+            >
+                <CircularProgress color="inherit" />
+            </Backdrop>
+
             <div className="row p-2 p-md-0">
                 <div className="col-lg-6 col-5 order-2">
                     <img src={imagePrincipal} className="img-fluid anim-in" />

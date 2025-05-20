@@ -189,7 +189,7 @@ export const PlanView = () => {
                                     }
                                 </div>
                                 <div className="mt-auto">
-                                    <button onClick={() => onSelectPlan(plan)} className="btn btn-block btn-lg bg-red-500 text-light mt-4 rounded-xxxl p-1 font-weight-semibold">Seleccionar</button>
+                                    <button onClick={() => onSelectPlan(plan)} className="btn btn-block btn-lg bg-red-500 text-light mt-4 rounded-xxxl p-1 font-weight-semibold">Seleccionar Plan</button>
                                 </div>
                             </Card>
                         </div>

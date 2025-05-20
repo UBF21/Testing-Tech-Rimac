@@ -20,8 +20,8 @@ export const Nav = () => {
 
 
   return (
-    <div className={`container-fluid ${gradient}`}>
-      <div className='row align-items-center p-4 justify-content-between mt-3'>
+    <nav className={`container-fluid ${gradient}`}>
+      <div className='row align-items-center p-4 justify-content-between'>
         <div className="col-md-6 d-flex justify-content-center col-5">
           <img src={rimacRojo}  width={70} height={50} alt="Rimac" className="img-fluid" />
         </div>
@@ -39,6 +39,6 @@ export const Nav = () => {
           </div>
         </div>
       </div>
-    </div>
-  );
+    </nav>
+  );  
 };

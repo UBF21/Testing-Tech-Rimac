@@ -36,7 +36,7 @@ export const LayoutPlanView = () => {
 
     return (
         <div className="bg-light">
-            <div className="container-fluid d-flex justify-content-center align-items-center bg-primary-light p-0">
+            <div className="container-fluid d-flex justify-content-center align-items-center bg-Neutrals-200 p-0">
                 <div className="w-75 mt-4 d-block  d-md-none">
                     <Stepper nonLinear activeStep={step} alternativeLabel>
                         <Step key={crypto.randomUUID()}>

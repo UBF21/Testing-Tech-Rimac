@@ -70,7 +70,7 @@ export const PlanView = () => {
             <div className="container mt-5 mb-5">
 
                 <div className="row mb-3 mt-3">
-                    <div className="col-12 d-flex justify-content-center">
+                    <div className="col-12 d-flex justify-content-md-center justify-content-start">
                         {
                             isLoading ? (
                                 <>
@@ -78,7 +78,7 @@ export const PlanView = () => {
                                     <Skeleton width={300} height={100} animation="wave" />
                                 </>
                             ) : (
-                                <h1 className="p-2 p-md-0 anim-in">{user && user.name} ¿Para quién deseas cotizar?</h1>
+                                <h1 className="anim-in pl-4 p-md-0 p-lg-0">{user && user.name} ¿Para quién deseas cotizar?</h1>
                             )
                         }
                     </div>
@@ -89,7 +89,7 @@ export const PlanView = () => {
                                     <Skeleton width={300} height={100} animation="wave" />
                                 </>
                             ) : (
-                                <p className="text-xl anim-in">Selecciona la opción que se ajuste más a tus necesidades.</p>
+                                <p className="text-xl anim-in pl-4 p-md-0 p-lg-0">Selecciona la opción que se ajuste más a tus necesidades.</p>
                             )
                         }
                     </div>

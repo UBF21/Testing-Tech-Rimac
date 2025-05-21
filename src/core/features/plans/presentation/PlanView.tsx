@@ -62,6 +62,7 @@ export const PlanView = () => {
     const onClickSelectedOption = (planOption: PlanOption) => {
         if (selectedValue == planOption.value) return;
         setSelectedValue(planOption.value);
+        setPlanOption(planOption);
     };
 
     useEffect(() => { if (user) setUser(user) }, [user, setUser]);

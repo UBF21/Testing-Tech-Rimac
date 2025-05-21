@@ -5,6 +5,7 @@ import { usePlanStore } from '../../shared/stores/planStore';
 import { useUserStore } from '../../shared/stores/userStore';
 import { usePlanOptionStore } from '../../shared/stores/PlanOptionStore';
 import { calculateDiscountedPrice } from '../../shared/utils/utils';
+import { useEffect } from 'react';
 
 
 export const SummaryView = () => {
@@ -14,6 +15,10 @@ export const SummaryView = () => {
     const user = useUserStore((state) => state.user);
     const planOption = usePlanOptionStore((state) => state.planOption);
 
+
+    useEffect(()=> {
+        console.log(planOption);
+    },[])
 
     return (
         <div className="container mt-5 mb-5 p-4">

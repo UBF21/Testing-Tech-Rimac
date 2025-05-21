@@ -16,7 +16,7 @@ export const Layout = () => {
 
     const mainClass = shouldHaveGradient() 
         ? "main-content bg-gradient" 
-        : "main-content";
+        : "main-content mb-5";
 
     return (
         <div className="layout-container">

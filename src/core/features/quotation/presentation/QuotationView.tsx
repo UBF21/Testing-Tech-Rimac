@@ -40,7 +40,7 @@ export const QuotationView = () => {
 
     return (
 
-        <div className="container d-flex justify-content-center align-items-center mt-5 mb-3">
+        <div className="container d-flex justify-content-center align-items-center mt-5 mb-3 w-md-75 w-100">
             <Backdrop
                 sx={(theme) => ({ color: '#fff', zIndex: theme.zIndex.drawer + 1 })}
                 open={open}

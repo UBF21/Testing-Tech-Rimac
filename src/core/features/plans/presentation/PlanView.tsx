@@ -16,6 +16,8 @@ import imageForMe from "../../../../assets/icons/para-mi.png";
 import imageForSomeoneElse from "../../../../assets/icons/para-alguien-mas.png";
 import PlanCasa from "../../../../assets/icons/plan-casa.png";
 
+
+
 export interface PlanOption {
     id: string;
     value: 'for-me' | 'for-someone-else';
@@ -67,9 +69,9 @@ export const PlanView = () => {
 
     return (
         <div>
-            <div className="container mt-5 mb-5">
+            <div className="container">
 
-                <div className="row mb-3 mt-3">
+                <div className="row mt-5">
                     <div className="col-12 d-flex justify-content-md-center justify-content-start">
                         {
                             isLoading ? (
@@ -196,9 +198,6 @@ export const PlanView = () => {
 
                     ))}
                 </div>
-
-
-
             </div>
         </div>
     );

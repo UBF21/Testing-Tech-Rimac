@@ -35,7 +35,7 @@ export const LayoutPlanView = () => {
     }
 
     return (
-        <div className="bg-light">
+        <div>
             <div className="container-fluid d-flex justify-content-center align-items-center bg-Neutrals-200 p-0">
                 <div className="w-75 mt-4 d-block  d-md-none">
                     <Stepper nonLinear activeStep={step} alternativeLabel>
@@ -65,20 +65,20 @@ export const LayoutPlanView = () => {
             </div>
 
             <main>
-                <div className="container d-none d-md-block mt-4">
+                <div className="container d-none d-md-block mt-5">
                     <a className="text-decoration-none cursor-pointer">
                         <div className="d-flex align-items-center justify-content-start" onClick={changePrevius}>
                             <div>
                                 <ArrowCircleLeftOutlinedIcon fontSize="large" className="text-blue-berry" />
                             </div>
-                            <div>
+                            <div className="mb-1 ml-1">
                                 <span className="font-weight-bold text-xl text-blue-berry">Volver</span>
                             </div>
                         </div>
                     </a>
                 </div>
 
-                <div className="bg-light">
+                <div >
                     {step === 0 ? <PlanView /> : <SummaryView />}
                 </div>
             </main>
